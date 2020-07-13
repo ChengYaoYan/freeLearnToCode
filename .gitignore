@@ -1,1 +1,4 @@
 Random-quote-machine/bootstrap/*
+markdown_preview/bootstrap/*
+markdown_preview/test.html
+.vscode/

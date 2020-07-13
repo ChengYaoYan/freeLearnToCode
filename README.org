@@ -1,0 +1,52 @@
+#+title: freeLearnToCode前端练习项目
+
+* Contents
+  - [[*tribute_page][tribute_page]]
+  - [[*survey_form][survey_form]]
+  - [[*technical_documentation][technical_documentation]]
+  - [[*product_landing_page][product_landing_page]]
+  - [[*personal_portfolio][personal_portfolio]]
+
+* tribute_page
+** 项目主题
+个人的生平介绍
+** 实现效果
+#+ATTR_ORG: :width 300px
+[[./asserts/p1.gif]]
+#+ATTR_ORG: :width 300px
+[[./asserts/sp1.png]]
+** 涉及知识点
+*** html 相关
+- 在 head 部分通过 link 标签引入外部样式表
+- 语义化样式，何时该使用 h1,何时该使用 h2 等
+*** css 相关
+**** border-radius
+border-radius 所设置的部分分别是盒模型的左上，右上，右下，左下四个角
+角的水平半径和垂直半径。
+
+*取值如下：*
+1. border-radius: 1px   -- (左上 1px，右上 1px，右下 1px，左下 1px)
+2. border-radius: 1px 2px 1px -- (左上 1px，右上 2px，右下 1px，左下 1px)
+3. border-radius: 1px / 2px -- (1px -- 水平半径，2px -- 垂直半径)
+**** box-shadow
+box-shadow 用于设置盒子的阴影效果
+
+*取值*
+1. box-shadow: 0 0 0 0 rgb(0, 0, 0) -- (向右偏移，向下偏移，模糊半径(通过增加阴影宽度来淡化阴影)，宽度，颜色)
+2. box-shadow: inset 0 0 rgb(0, 0, 0) -- (向内阴影)
+3. box-shadow:
+        0 0 #000,
+        0 1 #111;   -- (多重阴影)
+**** 首行悬挂
+可以通过以下代码来实现首行悬挂
+#+BEGIN_SRC javascript
+p {
+    margin-left: 50px;
+    text-indent: -50px;
+}
+#+END_SRC
+**** 伪类
+1. :link
+2. :visited
+3. :hover
+4. :active
