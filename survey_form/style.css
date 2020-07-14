@@ -1,0 +1,142 @@
+/* basic setting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+
+#head,
+#main {
+    display: block;
+}
+
+body {
+    background-image:
+        linear-gradient(135deg, rgba(29, 30, 75, .9) 20%,  rgba(60, 61, 91, .8) 80%),
+        url(./youngman.jpg);
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-size: cover;
+}
+
+#head {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#main {
+    width: 40%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 926px) {
+    #head {
+        width: 75%;
+        margin: auto;
+    }
+
+    #main {
+        width: 75%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 926px) and (max-width: 1476px) {
+    #head {
+        width: 55%;
+        margin: auto;
+    }
+
+    #main {
+        width: 55%;
+        margin: auto;
+    }
+}
+
+/* typrography */
+#head {
+    padding: 5%;
+    text-align: center;
+}
+
+#head h1 {
+    font-size: 2.7rem;
+    letter-spacing: .1rem;
+    color: rgb(184, 183, 183);
+    margin-bottom: 10px;
+}
+
+#head p {
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: rgba(134, 134, 134, .8);
+    font-style: italic;
+}
+
+#survey-form {
+    background-color: rgba(21, 21, 39, .9);
+    border-radius: 5px;
+    padding: 5%;
+    color: rgba(255, 255, 255, .7);
+}
+
+#survey-form > div {
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+#survey-form p {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#survey-form input {
+    width: 100%;
+    height: 40px;
+}
+
+#survey-form select {
+    width: 100%;
+    height: 40px;
+}
+
+#dropdown>div {
+    padding-top: .5%;
+    padding-bottom: .5%;
+}
+
+#dropdown input {
+    width: 20px;
+    height: 20px;
+}
+
+#dropdown label {
+    font-size: 1.8rem;
+    vertical-align: 3px;
+    padding-left: 5px;
+}
+
+#comment textarea {
+    width: 100%;
+    font-size: 20px;
+    resize: vertical;
+    padding: 2%;
+}
+
+#submit-button button {
+    width: 100%;
+    height: 50px;
+    color: #FFFFFF;
+    font-family: Helvetica;
+    font-size: 25px;
+    background-color: rgb(70, 205, 79);
+    border: 0px;
+    border-radius: 5px;
+}
