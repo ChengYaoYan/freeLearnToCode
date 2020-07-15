@@ -25,23 +25,23 @@ border-radius 所设置的部分分别是盒模型的左上，右上，右下，
 角的水平半径和垂直半径。
 
 *取值如下：*
-1. border-radius: 1px;  /*(左上 1px，右上 1px，右下 1px，左下 1px)*/
-2. border-radius: 1px 2px 1px;  /*(左上 1px，右上 2px，右下 1px，左下 1px)*/
-3. border-radius: 1px / 2px;  /*(1px -- 水平半径，2px -- 垂直半径)*/
+1. border-radius: 1px;  (左上 1px，右上 1px，右下 1px，左下 1px)
+2. border-radius: 1px 2px 1px;  (左上 1px，右上 2px，右下 1px，左下 1px)
+3. border-radius: 1px / 2px;  (1px -- 水平半径，2px -- 垂直半径)
 
 **** box-shadow
 box-shadow 用于设置盒子的阴影效果
 
 *取值*
-1. box-shadow: 0 0 0 0 rgb(0, 0, 0);  /*(向右偏移，向下偏移，模糊半径(通过增加阴影宽度来淡化阴影)，宽度，颜色)*/
-2. box-shadow: inset 0 0 rgb(0, 0, 0);  /*(向内阴影)*/
+1. box-shadow: 0 0 0 0 rgb(0, 0, 0);  (向右偏移，向下偏移，模糊半径(通过增加阴影宽度来淡化阴影)，宽度，颜色)
+2. box-shadow: inset 0 0 rgb(0, 0, 0);  (向内阴影)
 3. box-shadow:
         0 0 #000,
-        0 1 #111;  /*(多重阴影)*/
+        0 1 #111;  (多重阴影)
 
 **** 首行悬挂
 可以通过以下代码来实现首行悬挂
-#+BEGIN_SRC javascript
+#+BEGIN_SRC css
 p {
     margin-left: 50px;
     text-indent: -50px;
@@ -82,7 +82,7 @@ p {
 
 **** 媒体查询
 简单示例
-#+begin_src javascript
+#+begin_src css
 @media screen and (min-width: 200px) and (max-width: 400px) {
     h1 {
         width: 200px;
@@ -99,8 +99,16 @@ p {
 [[./asserts/sp3.png]]
 ** 涉及知识点
 *** css
+**** position
+使元素脱离文档流，以浏览器窗口为基准，按照(top|left|right|bottom)调整元素的位置
+#+BEGIN_SRC css
+p {
+    position: fixed;
+    top: 20px;
+}
+#+END_SRC
 **** flex
-- display: flex; /*声明*/
+- display: flex; // 声明
 - flex-direction: (row|column);
 - justify-content: (space-between|center|...);
 - align-items: (center|...);
@@ -110,3 +118,64 @@ p {
 - grid-template-row: (auto|fr|px|%);
 - column-gap: ...;
 - row-gap: ...;
+* technical_documentation
+** 项目主题
+技术文档浏览界面
+** 实现效果
+#+attr_org: :width 300px
+[[./asserts/p4.gif]]
+#+attr_org: :width 300px
+[[./asserts/sp4.png]]
+** 涉及知识点
+*** html
+**** 嵌套列表
+嵌套列表的写法如下：
+#+BEGIN_SRC html
+<ul>
+  <li>
+    China
+    <ul>
+      <li>hubei</li>
+      <li>hunan</li>
+    </ul>
+  </li>
+  <li>Japan</li>
+</ul>
+#+END_SRC
+**** code and pre
+code 标签用于表示计算机代码，效果是设置等宽字体（具体效果还没看见）。pre
+用于输入预定义的字段，基本效果是 html 代码所写的内容会在浏览器当中原样输出。
+#+BEGIN_SRC html
+<pre>
+if (true) {
+    console.log('i love javascript')
+}
+</pre
+#+END_SRC
+*** css
+**** grid 和媒体查询设计响应式布局
+可能的布局
+#+BEGIN_SRC css
+body {
+  display: grid;
+  grid-template-rows: 300px 1fr;
+}
+
+@media screen (min-width: 826px) {
+  body {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: none;
+  }
+}
+#+END_SRC
+**** position 技术
+position 的常用取值有：static, relative, absolute, fixed, sticky.
+并用 top, left, right, bottom 来调整元素的位置.
+
+- *static*: position 的默认值
+- *relative*: 元素不脱离文档流，其他元素可以预见其本来位置(即不会覆盖本来位置).
+              用 top 等可以调整其位置，参照点是其本来位置. 可以覆盖其他的元素.
+- *absolute*: 元素脱离文档流，参照点是设置了 position 为(relative|absolute|fixed|sticky)的父元素
+- *fixed*: 元素脱离文档流，位置又 top 等设定，参照点为浏览器窗口.
+- *sticky*: 和 fixed 相近. 不过最初待在原始位置，当页面滚动到 top等的条件时，会保持不动.
