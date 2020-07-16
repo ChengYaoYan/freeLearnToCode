@@ -157,16 +157,16 @@ if (true) {
 可能的布局
 #+BEGIN_SRC css
 body {
-  display: grid;
-  grid-template-rows: 300px 1fr;
+    display: grid;
+    grid-template-rows: 300px 1fr;
 }
 
 @media screen (min-width: 826px) {
-  body {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: none;
-  }
+    body {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: none;
+    }
 }
 #+END_SRC
 **** position 技术
@@ -178,4 +178,41 @@ position 的常用取值有：static, relative, absolute, fixed, sticky.
               用 top 等可以调整其位置，参照点是其本来位置. 可以覆盖其他的元素.
 - *absolute*: 元素脱离文档流，参照点是设置了 position 为(relative|absolute|fixed|sticky)的父元素
 - *fixed*: 元素脱离文档流，位置又 top 等设定，参照点为浏览器窗口.
-- *sticky*: 和 fixed 相近. 不过最初待在原始位置，当页面滚动到 top等的条件时，会保持不动.
+- *sticky*: 和 fixed 相近. 不过最初待在原始位置，当页面滚动到 top 等的条件时，会保持不动.
+**** overflow
+通过 overflow 来调整溢出元素的显示方式
+如本例首先为 ul 设置高度，然后设置 overflow
+#+BEGIN_SRC css
+ul {
+    height: 200px;
+    overflow: auto
+}
+#+END_SRC
+overflow 分为 overflow-x 和 overflow-y, 如果只设置一个值，则会应用到兩個方向上.
+
+* personal_portfolio
+** 项目主题
+自我介绍
+** 实现效果
+#+attr_org: :width 300px
+[[./asserts/p5.gif]]
+#+attr_org: :width 300px
+[[./asserts/sp5.png]]
+
+** 涉及知识点
+*** css
+**** 动画
+一個典型的动画示例
+#+BEGIN_SRC css
+button: hover {
+    animation-name: change-color;
+    anaimation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes change-color {
+    100% {
+    background-color: #000;
+    }
+}
+#+END_SRC
